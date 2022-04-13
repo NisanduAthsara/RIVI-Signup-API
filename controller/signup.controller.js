@@ -1,5 +1,5 @@
-const DB = require('../model/model')
-const isEmailValid = require('./funcs')
+const DB = require('../model/users.model')
+const isEmailValid = require('../utils/emailVerifyer')
 
 exports.signup = async (req,res)=>{
     try {

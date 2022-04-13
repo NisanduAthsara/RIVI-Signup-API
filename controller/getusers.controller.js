@@ -1,4 +1,4 @@
-const DB = require('../model/model')
+const DB = require('../model/users.model')
 
 exports.get = async (req,res)=>{
     try{

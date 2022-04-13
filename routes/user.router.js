@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express.Router()
-const controller = require('../controller/controller')
-const getAll = require('../controller/getusers')
+const controller = require('../controller/signup.controller')
+const getAll = require('../controller/getusers.controller')
 
 app.get('/',getAll.get)
 

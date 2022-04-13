@@ -1,21 +1,14 @@
 const express = require('express')
 const app = express()
-const routes = require('./routes/router')
+const routes = require('./routes/user.router')
 const dotenv = require('dotenv/config')
-const mongoose = require('mongoose')
+const dbConnect = require('./utils/dbConnect')
 
 const PORT = 8080
 
-app.use(express.urlencoded({extended:true}))
+dbConnect()
 
-//connect to mongodb
-try {
-    mongoose.connect(process.env.MONGO,{useNewUrlParser:true},()=>{
-        console.log('DB Connected');
-    })
-} catch (error) {
-    console.log(error);
-}
+app.use(express.urlencoded({extended:true}))
 
 app.use(routes)
 
